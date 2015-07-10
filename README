@@ -1,0 +1,18 @@
+Sets up a reverse tunnel to a trusted middle server
+So that someone can ssh into a endpoint without knowing the
+end IP or if the endpoint is behind a firewall
+(kindof same concept as logmein type service)
+
+Forwards SERVER:2222 => USER:22
+
+Notes:
+   Server must have "GatewayPorts yes" options. This allows the forward to
+   listen externally
+   Otherwise ssh -oProxyCommand="SERVER nc %h %p" localhost -p 2222 will suffice
+   sshd must be running on the endpoint (obviously)
+   Finally, Port 2222 must be not firewalled by the remote server as well.
+
+Future Plans:
+   Adding a desktop file so that it can just be clicked to run in the background
+      or a dumb window since the purpose is to allow me to have on demand access 
+      to a computer for technical support when necessary.
