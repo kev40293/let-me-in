@@ -1,0 +1,6 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Version=0.1beta
+Name=LetMeIn
+Exec=remote-open.sh %u
